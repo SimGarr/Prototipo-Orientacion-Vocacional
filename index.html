@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orientación Vocacional - Tu Futuro Profesional</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --success-color: #27ae60;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        .navbar-brand {
+            font-weight: bold;
+            color: var(--primary-color) !important;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .feature-card {
+            transition: transform 0.3s;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: #2980b9;
+            border-color: #2980b9;
+        }
+        
+        .module {
+            padding: 80px 0;
+        }
+        
+        .module:nth-child(even) {
+            background-color: white;
+        }
+        
+        .progress-bar {
+            background-color: var(--primary-color);
+        }
+        
+        .chat-bubble {
+            background-color: var(--light-color);
+            border-radius: 20px;
+            padding: 15px;
+            margin-bottom: 15px;
+            max-width: 80%;
+        }
+        
+        .user-message {
+            background-color: var(--primary-color);
+            color: white;
+            margin-left: auto;
+        }
+        
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-graduation-cap me-2"></i>Orientación Vocacional
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#test">Test Vocacional</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#carreras">Carreras</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#instituciones">Instituciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#orientacion">Orientación</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white ms-2" href="#registro">Registrarse</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold">Encuentra tu camino profesional</h1>
+                    <p class="lead my-4">Una plataforma integral para estudiantes de 4to medio que buscan orientación vocacional y información sobre carreras e instituciones de educación superior.</p>
+                    <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
+                        <a href="#test" class="btn btn-light btn-lg">Comenzar Test Vocacional</a>
+                        <a href="#carreras" class="btn btn-outline-light btn-lg">Explorar Carreras</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="https://razonpublica.com/wp-content/uploads/2023/05/estudiantes-universitarios-profesores-universidades-Francisco-Diaz.jpg" alt="Estudiantes" class="img-fluid" style="max-height: 400px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="module">
+        <div class="container">
+            <h2 class="section-title text-center">¿Cómo te ayudamos?</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card feature-card">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-clipboard-list"></i>
+                            </div>
+                            <h4 class="card-title">Test Vocacional</h4>
+                            <p class="card-text">Descubre tus intereses, habilidades y áreas de estudio ideales con nuestro test vocacional personalizado.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <h4 class="card-title">Información de Carreras</h4>
+                            <p class="card-text">Accede a información detallada sobre carreras, instituciones, aranceles y campo laboral.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-card">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h4 class="card-title">Orientación Personalizada</h4>
+                            <p class="card-text">Chatea con orientadores profesionales que te guiarán en tu proceso de decisión.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Test Vocacional Section -->
+    <section id="test" class="module bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Test Vocacional</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card shadow">
+                        <div class="card-body p-4">
+                            <div id="test-intro">
+                                <h4 class="mb-3">Descubre tu vocación</h4>
+                                <p>Este test te ayudará a identificar tus intereses, habilidades y preferencias para recomendarte carreras que se ajusten a tu perfil.</p>
+                                <p>Responde con sinceridad, no hay respuestas correctas o incorrectas.</p>
+                                <button id="start-test" class="btn btn-primary btn-lg mt-3">Comenzar Test</button>
+                            </div>
+                            
+                            <div id="test-questions" class="hidden">
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <h5>Pregunta <span id="question-number">1</span> de 10</h5>
+                                    <div class="progress" style="width: 200px;">
+                                        <div id="test-progress" class="progress-bar" role="progressbar" style="width: 10%;"></div>
+                                    </div>
+                                </div>
+                                
+                                <div id="question-container">
+                                    <h4 id="question-text" class="mb-4">¿Te gusta trabajar con números y resolver problemas matemáticos?</h4>
+                                    
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="radio" name="answer" id="option1" value="1">
+                                        <label class="form-check-label" for="option1">
+                                            Muy en desacuerdo
+                                        </label>
+                                    </div>
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="radio" name="answer" id="option2" value="2">
+                                        <label class="form-check-label" for="option2">
+                                            En desacuerdo
+                                        </label>
+                                    </div>
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="radio" name="answer" id="option3" value="3">
+                                        <label class="form-check-label" for="option3">
+                                            Neutral
+                                        </label>
+                                    </div>
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="radio" name="answer" id="option4" value="4">
+                                        <label class="form-check-label" for="option4">
+                                            De acuerdo
+                                        </label>
+                                    </div>
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="radio" name="answer" id="option5" value="5">
+                                        <label class="form-check-label" for="option5">
+                                            Muy de acuerdo
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="d-flex justify-content-between mt-4">
+                                    <button id="prev-question" class="btn btn-outline-secondary" disabled>Anterior</button>
+                                    <button id="next-question" class="btn btn-primary">Siguiente</button>
+                                </div>
+                            </div>
+                            
+                            <div id="test-results" class="hidden">
+                                <h4 class="text-center mb-4">Resultados de tu Test Vocacional</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5>Áreas de Interés</h5>
+                                        <ul class="list-group mb-4">
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                Tecnología
+                                                <span class="badge bg-primary rounded-pill">85%</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                Ciencias
+                                                <span class="badge bg-primary rounded-pill">72%</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                Humanidades
+                                                <span class="badge bg-primary rounded-pill">45%</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5>Carreras Recomendadas</h5>
+                                        <div class="list-group">
+                                            <a href="#" class="list-group-item list-group-item-action">Ingeniería en Informática</a>
+                                            <a href="#" class="list-group-item list-group-item-action">Ciencia de Datos</a>
+                                            <a href="#" class="list-group-item list-group-item-action">Ingeniería Civil</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-4">
+                                    <button id="restart-test" class="btn btn-primary">Realizar Test Nuevamente</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carreras Section -->
+    <section id="carreras" class="module">
+        <div class="container">
+            <h2 class="section-title text-center">Explora Carreras</h2>
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Buscar carrera...">
+                        <button class="btn btn-primary" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-select">
+                        <option selected>Filtrar por área de estudio</option>
+                        <option value="1">Tecnología</option>
+                        <option value="2">Ciencias de la Salud</option>
+                        <option value="3">Humanidades</option>
+                        <option value="4">Ciencias Sociales</option>
+                        <option value="5">Artes</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Ingeniería en Informática</h5>
+                            <p class="card-text">Diseña, desarrolla y mantiene sistemas de software y hardware para resolver problemas tecnológicos.</p>
+                            <div class="mb-2">
+                                <small class="text-muted"><i class="fas fa-clock me-1"></i> Duración: 10 semestres</small>
+                            </div>
+                            <div class="mb-2">
+                                <small class="text-muted"><i class="fas fa-dollar-sign me-1"></i> Arancel promedio: $3.500.000 anual</small>
+                            </div>
+                            <a href="#" class="btn btn-outline-primary btn-sm">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Medicina</h5>
+                            <p class="card-text">Diagnostica, trata y previene enfermedades, promoviendo la salud y el bienestar de las personas.</p>
+                            <div class="mb-2">
+                                <small class="text-muted"><i class="fas fa-clock me-1"></i> Duración: 12 semestres</small>
+                            </div>
+                            <div class="mb-2">
+                                <small class="text-muted"><i class="fas fa-dollar-sign me-1"></i> Arancel promedio: $7.000.000 anual</small>
+                            </div>
+                            <a href="#" class="btn btn-outline-primary btn-sm">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Psicología</h5>
+                            <p class="card-text">Estudia el comportamiento humano y los procesos mentales para mejorar la salud mental y el bienestar.</p>
+                            <div class="mb-2">
+                                <small class="text-muted"><i class="fas fa-clock me-1"></i> Duración: 10 semestres</small>
+                            </div>
+                            <div class="mb-2">
+                                <small class="text-muted"><i class="fas fa-dollar-sign me-1"></i> Arancel promedio: $4.200.000 anual</small>
+                            </div>
+                            <a href="#" class="btn btn-outline-primary btn-sm">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-primary">Ver todas las carreras</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Orientación Section -->
+    <section id="orientacion" class="module bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Orientación Personalizada</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <div class="text-center mb-4">
+                                <h4>Chat con Orientadores</h4>
+                                <p class="text-muted">Conecta con orientadores profesionales para resolver tus dudas</p>
+                            </div>
+                            
+                            <div id="chat-container" style="height: 300px; overflow-y: auto; margin-bottom: 20px; padding: 15px; border: 1px solid #e0e0e0; border-radius: 10px; background-color: #f9f9f9;">
+                                <div class="chat-bubble">
+                                    <strong>Orientador:</strong> Hola! Soy Carlos, orientador vocacional. ¿En qué puedo ayudarte hoy?
+                                </div>
+                                <div class="chat-bubble user-message">
+                                    <strong>Tú:</strong> Hola Carlos, tengo dudas entre estudiar ingeniería o medicina.
+                                </div>
+                                <div class="chat-bubble">
+                                    <strong>Orientador:</strong> Entiendo, es una decisión importante. ¿Has realizado nuestro test vocacional? Te puede dar una buena orientación inicial sobre tus intereses y aptitudes.
+                                </div>
+                            </div>
+                            
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Escribe tu mensaje...">
+                                <button class="btn btn-primary" type="button">Enviar</button>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <h5>También puedes agendar una sesión personalizada</h5>
+                                <button class="btn btn-outline-primary">Agendar Sesión</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="module">
+        <div class="container">
+            <h2 class="section-title text-center">Experiencias de Estudiantes</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-0">María González</h5>
+                                <p class="text-muted mb-0">Estudiante de Psicología</p>
+                            </div>
+                        </div>
+                        <p class="mb-0">"Gracias al test vocacional pude confirmar que la psicología era lo mío. La plataforma me ayudó a encontrar la universidad perfecta para mis intereses."</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-0">Javier López</h5>
+                                <p class="text-muted mb-0">Estudiante de Ingeniería</p>
+                            </div>
+                        </div>
+                        <p class="mb-0">"La sección de comparación de carreras fue invaluable. Pude ver todas mis opciones y tomar una decisión informada sobre mi futuro profesional."</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-0">Ana Silva</h5>
+                                <p class="text-muted mb-0">Estudiante de Medicina</p>
+                            </div>
+                        </div>
+                        <p class="mb-0">"El chat con orientadores me resolvió muchas dudas que tenía sobre el proceso de admisión. Fue como tener un guía personal en todo momento."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="mb-3">Orientación Vocacional</h5>
+                    <p>Una plataforma dedicada a ayudar a los estudiantes a encontrar su camino profesional.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5 class="mb-3">Enlaces</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#inicio" class="text-white text-decoration-none">Inicio</a></li>
+                        <li class="mb-2"><a href="#test" class="text-white text-decoration-none">Test Vocacional</a></li>
+                        <li class="mb-2"><a href="#carreras" class="text-white text-decoration-none">Carreras</a></li>
+                        <li class="mb-2"><a href="#orientacion" class="text-white text-decoration-none">Orientación</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="mb-3">Recursos</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Blog</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Preguntas Frecuentes</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Guías de Estudio</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Calendario de Postulaciones</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3">Contacto</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> contacto@orientacionvocacional.cl</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +56 2 2345 6789</li>
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> Santiago, Chile</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Orientación Vocacional. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Test Vocacional Logic
+            const testIntro = document.getElementById('test-intro');
+            const testQuestions = document.getElementById('test-questions');
+            const testResults = document.getElementById('test-results');
+            const startTestBtn = document.getElementById('start-test');
+            const nextQuestionBtn = document.getElementById('next-question');
+            const prevQuestionBtn = document.getElementById('prev-question');
+            const restartTestBtn = document.getElementById('restart-test');
+            const questionNumber = document.getElementById('question-number');
+            const questionText = document.getElementById('question-text');
+            const testProgress = document.getElementById('test-progress');
+            
+            const questions = [
+                "¿Te gusta trabajar con números y resolver problemas matemáticos?",
+                "¿Disfrutas ayudando a otras personas y escuchando sus problemas?",
+                "¿Te interesa entender cómo funcionan las máquinas y la tecnología?",
+                "¿Te gusta leer y aprender sobre historia, literatura o filosofía?",
+                "¿Eres creativo/a y te gusta expresarte a través del arte?",
+                "¿Te interesa la naturaleza y los seres vivos?",
+                "¿Te gusta organizar eventos y trabajar en equipo?",
+                "¿Prefieres trabajar en un ambiente estructurado con reglas claras?",
+                "¿Te motiva la idea de emprender y crear tu propio negocio?",
+                "¿Te consideras una persona curiosa que siempre está aprendiendo cosas nuevas?"
+            ];
+            
+            let currentQuestion = 0;
+            let answers = [];
+            
+            // Start test
+            startTestBtn.addEventListener('click', function() {
+                testIntro.classList.add('hidden');
+                testQuestions.classList.remove('hidden');
+                updateQuestion();
+            });
+            
+            // Next question
+            nextQuestionBtn.addEventListener('click', function() {
+                const selectedOption = document.querySelector('input[name="answer"]:checked');
+                
+                if (selectedOption) {
+                    answers[currentQuestion] = parseInt(selectedOption.value);
+                    
+                    if (currentQuestion < questions.length - 1) {
+                        currentQuestion++;
+                        updateQuestion();
+                        prevQuestionBtn.disabled = false;
+                    } else {
+                        // Finish test
+                        showResults();
+                    }
+                } else {
+                    alert('Por favor selecciona una respuesta antes de continuar.');
+                }
+            });
+            
+            // Previous question
+            prevQuestionBtn.addEventListener('click', function() {
+                if (currentQuestion > 0) {
+                    currentQuestion--;
+                    updateQuestion();
+                    
+                    if (currentQuestion === 0) {
+                        prevQuestionBtn.disabled = true;
+                    }
+                }
+            });
+            
+            // Restart test
+            restartTestBtn.addEventListener('click', function() {
+                testResults.classList.add('hidden');
+                testIntro.classList.remove('hidden');
+                currentQuestion = 0;
+                answers = [];
+                updateQuestion();
+            });
+            
+            function updateQuestion() {
+                questionNumber.textContent = currentQuestion + 1;
+                questionText.textContent = questions[currentQuestion];
+                
+                // Update progress bar
+                const progress = ((currentQuestion + 1) / questions.length) * 100;
+                testProgress.style.width = `${progress}%`;
+                
+                // Check if we have a previous answer for this question
+                const previousAnswer = answers[currentQuestion];
+                if (previousAnswer) {
+                    document.querySelector(`input[value="${previousAnswer}"]`).checked = true;
+                } else {
+                    document.querySelectorAll('input[name="answer"]').forEach(input => {
+                        input.checked = false;
+                    });
+                }
+                
+                // Update next button text if it's the last question
+                if (currentQuestion === questions.length - 1) {
+                    nextQuestionBtn.textContent = 'Ver Resultados';
+                } else {
+                    nextQuestionBtn.textContent = 'Siguiente';
+                }
+            }
+            
+            function showResults() {
+                testQuestions.classList.add('hidden');
+                testResults.classList.remove('hidden');
+            }
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
