@@ -17,21 +17,59 @@
             --success-color: #27ae60;
         }
         
+        * {
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f8f9fa;
+            line-height: 1.6;
         }
         
         .navbar-brand {
             font-weight: bold;
             color: var(--primary-color) !important;
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+        }
+        
+        .navbar-nav .nav-link {
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            padding: 0.5rem 0.8rem !important;
         }
         
         .hero-section {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            padding: 100px 0;
+            padding: clamp(3rem, 8vw, 6rem) 0;
             text-align: center;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-section h1 {
+            font-size: clamp(1.8rem, 5vw, 3.5rem);
+            margin-bottom: clamp(1rem, 3vw, 1.5rem);
+        }
+        
+        .hero-section p {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            margin-bottom: clamp(1.5rem, 4vw, 2rem);
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .hero-buttons .btn {
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            padding: 0.75rem 1.5rem;
+            flex: 0 1 auto;
+            min-width: 160px;
         }
         
         .feature-card {
@@ -39,6 +77,7 @@
             border: none;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             height: 100%;
+            margin-bottom: 1.5rem;
         }
         
         .feature-card:hover {
@@ -46,7 +85,7 @@
         }
         
         .feature-icon {
-            font-size: 3rem;
+            font-size: clamp(2rem, 5vw, 3rem);
             color: var(--primary-color);
             margin-bottom: 1rem;
         }
@@ -54,21 +93,23 @@
         .testimonial-card {
             background-color: white;
             border-radius: 10px;
-            padding: 2rem;
+            padding: clamp(1.5rem, 3vw, 2rem);
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             margin-bottom: 2rem;
+            height: 100%;
         }
         
         .footer {
             background-color: var(--secondary-color);
             color: white;
-            padding: 3rem 0;
+            padding: clamp(2rem, 5vw, 3rem) 0;
         }
         
         .section-title {
             position: relative;
-            margin-bottom: 2rem;
+            margin-bottom: clamp(1.5rem, 3vw, 2rem);
             padding-bottom: 0.5rem;
+            font-size: clamp(1.5rem, 3.5vw, 2.2rem);
         }
         
         .section-title:after {
@@ -92,7 +133,7 @@
         }
         
         .module {
-            padding: 80px 0;
+            padding: clamp(3rem, 6vw, 5rem) 0;
         }
         
         .module:nth-child(even) {
@@ -106,9 +147,10 @@
         .chat-bubble {
             background-color: var(--light-color);
             border-radius: 20px;
-            padding: 15px;
+            padding: 12px 15px;
             margin-bottom: 15px;
-            max-width: 80%;
+            max-width: 85%;
+            font-size: clamp(0.85rem, 2vw, 0.95rem);
         }
         
         .user-message {
@@ -126,6 +168,7 @@
             border: none;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             height: 100%;
+            margin-bottom: 1.5rem;
         }
         
         .institution-card:hover {
@@ -134,7 +177,7 @@
         }
         
         .institution-logo {
-            height: 80px;
+            height: clamp(60px, 10vw, 80px);
             object-fit: contain;
             margin-bottom: 1rem;
         }
@@ -147,11 +190,11 @@
             color: white;
             padding: 5px 10px;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: clamp(0.7rem, 1.5vw, 0.8rem);
         }
         
         .stats-number {
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 4vw, 2rem);
             font-weight: bold;
             color: var(--primary-color);
         }
@@ -159,6 +202,122 @@
         .comparison-table th {
             background-color: var(--primary-color);
             color: white;
+        }
+        
+        /* Mejoras de responsividad para tablas */
+        .table-responsive {
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        /* Ajustes para dispositivos móviles */
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: 70vh;
+                text-align: center;
+            }
+            
+            .hero-section .row {
+                flex-direction: column-reverse;
+            }
+            
+            .hero-section img {
+                max-height: 250px;
+                margin-bottom: 2rem;
+            }
+            
+            .navbar-collapse {
+                background-color: white;
+                padding: 1rem;
+                border-radius: 0 0 10px 10px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            .test-options .form-check {
+                margin-bottom: 0.8rem;
+            }
+            
+            .chat-bubble {
+                max-width: 90%;
+            }
+            
+            .institution-filters .col-md-4 {
+                margin-bottom: 1rem;
+            }
+            
+            .stats-card .card-body {
+                padding: 1rem;
+            }
+        }
+        
+        /* Ajustes para tablets */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .hero-section {
+                min-height: 75vh;
+            }
+            
+            .hero-section img {
+                max-height: 350px;
+            }
+            
+            .feature-card .card-body {
+                padding: 1.5rem;
+            }
+        }
+        
+        /* Mejoras de accesibilidad */
+        .btn:focus, .form-control:focus, .form-select:focus {
+            box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+            border-color: var(--primary-color);
+        }
+        
+        /* Animaciones suaves */
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Mejoras de legibilidad */
+        .card-text, .testimonial-card p {
+            font-size: clamp(0.9rem, 1.8vw, 1rem);
+        }
+        
+        .card-title {
+            font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+        }
+        
+        /* Ajustes para el test vocacional en móviles */
+        @media (max-width: 576px) {
+            #test-questions {
+                padding: 1rem;
+            }
+            
+            #question-text {
+                font-size: 1.1rem;
+            }
+            
+            .test-options .form-check-label {
+                font-size: 0.9rem;
+            }
+            
+            .test-navigation {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .test-navigation .btn {
+                width: 100%;
+            }
+        }
+        
+        /* Optimización de imágenes */
+        img {
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
@@ -169,7 +328,7 @@
             <a class="navbar-brand" href="#">
                 <i class="fas fa-graduation-cap me-2"></i>Orientación Vocacional
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -189,8 +348,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#orientacion">Orientación</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-primary text-white ms-2" href="#registro">Registrarse</a>
+                    <li class="nav-item d-block d-lg-none mt-2">
+                        <a class="nav-link btn btn-primary text-white w-100" href="#registro">Registrarse</a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block ms-2">
+                        <a class="nav-link btn btn-primary text-white" href="#registro">Registrarse</a>
                     </li>
                 </ul>
             </div>
@@ -201,16 +363,16 @@
     <section id="inicio" class="hero-section">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6">
+                <div class="col-lg-6 order-2 order-lg-1 fade-in">
                     <h1 class="display-4 fw-bold">Encuentra tu camino profesional</h1>
                     <p class="lead my-4">Una plataforma integral para estudiantes de 4to medio que buscan orientación vocacional y información sobre carreras e instituciones de educación superior.</p>
-                    <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
+                    <div class="hero-buttons">
                         <a href="#test" class="btn btn-light btn-lg">Comenzar Test Vocacional</a>
                         <a href="#carreras" class="btn btn-outline-light btn-lg">Explorar Carreras</a>
                     </div>
                 </div>
-                <div class="col-lg-6 text-center">
-                    <img src="https://razonpublica.com/wp-content/uploads/2023/05/estudiantes-universitarios-profesores-universidades-Francisco-Diaz.jpg" alt="Estudiantes" class="img-fluid" style="max-height: 400px;">
+                <div class="col-lg-6 order-1 order-lg-2 text-center fade-in">
+                    <img src="https://razonpublica.com/wp-content/uploads/2023/05/estudiantes-universitarios-profesores-universidades-Francisco-Diaz.jpg" alt="Estudiantes" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -222,7 +384,7 @@
             <h2 class="section-title text-center">¿Cómo te ayudamos?</h2>
             <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="card feature-card">
+                    <div class="card feature-card fade-in">
                         <div class="card-body text-center p-4">
                             <div class="feature-icon">
                                 <i class="fas fa-clipboard-list"></i>
@@ -233,7 +395,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card feature-card">
+                    <div class="card feature-card fade-in">
                         <div class="card-body text-center p-4">
                             <div class="feature-icon">
                                 <i class="fas fa-university"></i>
@@ -244,7 +406,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card feature-card">
+                    <div class="card feature-card fade-in">
                         <div class="card-body text-center p-4">
                             <div class="feature-icon">
                                 <i class="fas fa-comments"></i>
@@ -263,20 +425,22 @@
         <div class="container">
             <h2 class="section-title text-center">Test Vocacional</h2>
             <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="card shadow">
-                        <div class="card-body p-4">
+                <div class="col-lg-10 col-xl-8">
+                    <div class="card shadow fade-in">
+                        <div class="card-body p-3 p-md-4">
                             <div id="test-intro">
                                 <h4 class="mb-3">Descubre tu vocación</h4>
                                 <p>Este test te ayudará a identificar tus intereses, habilidades y preferencias para recomendarte carreras que se ajusten a tu perfil.</p>
                                 <p>Responde con sinceridad, no hay respuestas correctas o incorrectas.</p>
-                                <button id="start-test" class="btn btn-primary btn-lg mt-3">Comenzar Test</button>
+                                <div class="text-center mt-4">
+                                    <button id="start-test" class="btn btn-primary btn-lg">Comenzar Test</button>
+                                </div>
                             </div>
                             
                             <div id="test-questions" class="hidden">
-                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                <div class="d-flex justify-content-between align-items-center mb-4 flex-column flex-md-row">
                                     <h5>Pregunta <span id="question-number">1</span> de 10</h5>
-                                    <div class="progress" style="width: 200px;">
+                                    <div class="progress mt-2 mt-md-0" style="width: 200px;">
                                         <div id="test-progress" class="progress-bar" role="progressbar" style="width: 10%;"></div>
                                     </div>
                                 </div>
@@ -284,39 +448,41 @@
                                 <div id="question-container">
                                     <h4 id="question-text" class="mb-4">¿Te gusta trabajar con números y resolver problemas matemáticos?</h4>
                                     
-                                    <div class="form-check mb-3">
-                                        <input class="form-check-input" type="radio" name="answer" id="option1" value="1">
-                                        <label class="form-check-label" for="option1">
-                                            Muy en desacuerdo
-                                        </label>
-                                    </div>
-                                    <div class="form-check mb-3">
-                                        <input class="form-check-input" type="radio" name="answer" id="option2" value="2">
-                                        <label class="form-check-label" for="option2">
-                                            En desacuerdo
-                                        </label>
-                                    </div>
-                                    <div class="form-check mb-3">
-                                        <input class="form-check-input" type="radio" name="answer" id="option3" value="3">
-                                        <label class="form-check-label" for="option3">
-                                            Neutral
-                                        </label>
-                                    </div>
-                                    <div class="form-check mb-3">
-                                        <input class="form-check-input" type="radio" name="answer" id="option4" value="4">
-                                        <label class="form-check-label" for="option4">
-                                            De acuerdo
-                                        </label>
-                                    </div>
-                                    <div class="form-check mb-3">
-                                        <input class="form-check-input" type="radio" name="answer" id="option5" value="5">
-                                        <label class="form-check-label" for="option5">
-                                            Muy de acuerdo
-                                        </label>
+                                    <div class="test-options">
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="radio" name="answer" id="option1" value="1">
+                                            <label class="form-check-label" for="option1">
+                                                Muy en desacuerdo
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="radio" name="answer" id="option2" value="2">
+                                            <label class="form-check-label" for="option2">
+                                                En desacuerdo
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="radio" name="answer" id="option3" value="3">
+                                            <label class="form-check-label" for="option3">
+                                                Neutral
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="radio" name="answer" id="option4" value="4">
+                                            <label class="form-check-label" for="option4">
+                                                De acuerdo
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="radio" name="answer" id="option5" value="5">
+                                            <label class="form-check-label" for="option5">
+                                                Muy de acuerdo
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                                 
-                                <div class="d-flex justify-content-between mt-4">
+                                <div class="d-flex justify-content-between mt-4 test-navigation">
                                     <button id="prev-question" class="btn btn-outline-secondary" disabled>Anterior</button>
                                     <button id="next-question" class="btn btn-primary">Siguiente</button>
                                 </div>
@@ -325,7 +491,7 @@
                             <div id="test-results" class="hidden">
                                 <h4 class="text-center mb-4">Resultados de tu Test Vocacional</h4>
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 mb-4 mb-md-0">
                                         <h5>Áreas de Interés</h5>
                                         <ul class="list-group mb-4">
                                             <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -367,7 +533,7 @@
         <div class="container">
             <h2 class="section-title text-center">Explora Carreras</h2>
             <div class="row mb-4">
-                <div class="col-md-6">
+                <div class="col-md-6 mb-3 mb-md-0">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Buscar carrera...">
                         <button class="btn btn-primary" type="button">
@@ -389,7 +555,7 @@
             
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
-                    <div class="card h-100">
+                    <div class="card h-100 fade-in">
                         <div class="card-body">
                             <h5 class="card-title">Ingeniería en Informática</h5>
                             <p class="card-text">Diseña, desarrolla y mantiene sistemas de software y hardware para resolver problemas tecnológicos.</p>
@@ -405,7 +571,7 @@
                 </div>
                 
                 <div class="col-lg-4 col-md-6">
-                    <div class="card h-100">
+                    <div class="card h-100 fade-in">
                         <div class="card-body">
                             <h5 class="card-title">Medicina</h5>
                             <p class="card-text">Diagnostica, trata y previene enfermedades, promoviendo la salud y el bienestar de las personas.</p>
@@ -421,7 +587,7 @@
                 </div>
                 
                 <div class="col-lg-4 col-md-6">
-                    <div class="card h-100">
+                    <div class="card h-100 fade-in">
                         <div class="card-body">
                             <h5 class="card-title">Psicología</h5>
                             <p class="card-text">Estudia el comportamiento humano y los procesos mentales para mejorar la salud mental y el bienestar.</p>
@@ -449,8 +615,8 @@
             <h2 class="section-title text-center">Instituciones de Educación Superior</h2>
             
             <!-- Filtros -->
-            <div class="row mb-4">
-                <div class="col-md-4">
+            <div class="row mb-4 institution-filters">
+                <div class="col-md-4 mb-3 mb-md-0">
                     <select class="form-select" id="tipo-institucion">
                         <option value="">Todas las instituciones</option>
                         <option value="universidad">Universidades</option>
@@ -458,7 +624,7 @@
                         <option value="centro">Centros de Formación Técnica</option>
                     </select>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 mb-3 mb-md-0">
                     <select class="form-select" id="region-institucion">
                         <option value="">Todas las regiones</option>
                         <option value="metropolitana">Región Metropolitana</option>
@@ -479,32 +645,32 @@
             
             <!-- Estadísticas -->
             <div class="row mb-5 text-center">
-                <div class="col-md-3">
-                    <div class="card">
+                <div class="col-6 col-md-3 mb-3">
+                    <div class="card stats-card h-100">
                         <div class="card-body">
                             <div class="stats-number">67</div>
                             <div class="text-muted">Universidades</div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="card">
+                <div class="col-6 col-md-3 mb-3">
+                    <div class="card stats-card h-100">
                         <div class="card-body">
                             <div class="stats-number">45</div>
                             <div class="text-muted">Institutos Profesionales</div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="card">
+                <div class="col-6 col-md-3 mb-3">
+                    <div class="card stats-card h-100">
                         <div class="card-body">
                             <div class="stats-number">32</div>
                             <div class="text-muted">CFT</div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="card">
+                <div class="col-6 col-md-3 mb-3">
+                    <div class="card stats-card h-100">
                         <div class="card-body">
                             <div class="stats-number">1,250+</div>
                             <div class="text-muted">Carreras Disponibles</div>
@@ -516,7 +682,7 @@
             <!-- Lista de Instituciones -->
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
-                    <div class="card institution-card">
+                    <div class="card institution-card fade-in">
                         <div class="card-body position-relative">
                             <div class="accreditation-badge">Acreditada</div>
                             <div class="text-center mb-3">
@@ -541,11 +707,11 @@
                 </div>
                 
                 <div class="col-lg-4 col-md-6">
-                    <div class="card institution-card">
+                    <div class="card institution-card fade-in">
                         <div class="card-body position-relative">
                             <div class="accreditation-badge">Acreditada</div>
                             <div class="text-center mb-3">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQCWUfYsDaxTiQ-KvCF_AIhvnze6ZQhn5Tkw&s" alt="Pontificia Universidad Católica de Chile" class="institution-logo">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Escudo_de_la_Pontificia_Universidad_Cat%C3%B3lica_de_Chile.svg/500px-Escudo_de_la_Pontificia_Universidad_Cat%C3%B3lica_de_Chile.svg.png" alt="Pontificia Universidad Católica de Chile" class="institution-logo">
                             </div>
                             <h5 class="card-title text-center">P. Universidad Católica</h5>
                             <p class="card-text text-muted text-center">Universidad privada con tradición académica y excelencia.</p>
@@ -566,7 +732,7 @@
                 </div>
                 
                 <div class="col-lg-4 col-md-6">
-                    <div class="card institution-card">
+                    <div class="card institution-card fade-in">
                         <div class="card-body position-relative">
                             <div class="accreditation-badge">Acreditada</div>
                             <div class="text-center mb-3">
@@ -663,7 +829,7 @@
             <h2 class="section-title text-center">Orientación Personalizada</h2>
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <div class="card shadow">
+                    <div class="card shadow fade-in">
                         <div class="card-body">
                             <div class="text-center mb-4">
                                 <h4>Chat con Orientadores</h4>
@@ -703,8 +869,8 @@
         <div class="container">
             <h2 class="section-title text-center">Experiencias de Estudiantes</h2>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="testimonial-card">
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card fade-in">
                         <div class="d-flex align-items-center mb-3">
                             <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
                                 <i class="fas fa-user"></i>
@@ -717,8 +883,8 @@
                         <p class="mb-0">"Gracias al test vocacional pude confirmar que la psicología era lo mío. La plataforma me ayudó a encontrar la universidad perfecta para mis intereses."</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="testimonial-card">
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card fade-in">
                         <div class="d-flex align-items-center mb-3">
                             <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
                                 <i class="fas fa-user"></i>
@@ -731,8 +897,8 @@
                         <p class="mb-0">"La sección de comparación de carreras fue invaluable. Pude ver todas mis opciones y tomar una decisión informada sobre mi futuro profesional."</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="testimonial-card">
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card fade-in">
                         <div class="d-flex align-items-center mb-3">
                             <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
                                 <i class="fas fa-user"></i>
@@ -940,6 +1106,25 @@
                 // según los criterios seleccionados
                 console.log('Filtrando instituciones...');
             }
+            
+            // Animación de elementos al hacer scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observar elementos para animación
+            document.querySelectorAll('.feature-card, .testimonial-card, .institution-card').forEach(el => {
+                observer.observe(el);
+            });
         });
     </script>
 </body>
