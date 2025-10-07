@@ -120,6 +120,46 @@
         .hidden {
             display: none;
         }
+        
+        .institution-card {
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+        
+        .institution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+        
+        .institution-logo {
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+        
+        .accreditation-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--success-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        .stats-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .comparison-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -170,7 +210,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 text-center">
-                    <img src="https://razonpublica.com/wp-content/uploads/2023/05/estudiantes-universitarios-profesores-universidades-Francisco-Diaz.jpg" alt="Estudiantes" class="img-fluid" style="max-height: 400px;">
+                    <img src="https://cdn.pixabay.com/photo/2017/09/08/00/38/friend-2727305_1280.png" alt="Estudiantes" class="img-fluid" style="max-height: 400px;">
                 </div>
             </div>
         </div>
@@ -403,8 +443,222 @@
         </div>
     </section>
 
+    <!-- Instituciones Section -->
+    <section id="instituciones" class="module bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Instituciones de Educación Superior</h2>
+            
+            <!-- Filtros -->
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <select class="form-select" id="tipo-institucion">
+                        <option value="">Todas las instituciones</option>
+                        <option value="universidad">Universidades</option>
+                        <option value="instituto">Institutos Profesionales</option>
+                        <option value="centro">Centros de Formación Técnica</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <select class="form-select" id="region-institucion">
+                        <option value="">Todas las regiones</option>
+                        <option value="metropolitana">Región Metropolitana</option>
+                        <option value="valparaiso">Región de Valparaíso</option>
+                        <option value="biobio">Región del Biobío</option>
+                        <option value="araucania">Región de La Araucanía</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Buscar institución...">
+                        <button class="btn btn-primary" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Estadísticas -->
+            <div class="row mb-5 text-center">
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="stats-number">67</div>
+                            <div class="text-muted">Universidades</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="stats-number">45</div>
+                            <div class="text-muted">Institutos Profesionales</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="stats-number">32</div>
+                            <div class="text-muted">CFT</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="stats-number">1,250+</div>
+                            <div class="text-muted">Carreras Disponibles</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lista de Instituciones -->
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card institution-card">
+                        <div class="card-body position-relative">
+                            <div class="accreditation-badge">Acreditada</div>
+                            <div class="text-center mb-3">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Universidad_de_Chile_logo.svg/320px-Universidad_de_Chile_logo.svg.png" alt="Universidad de Chile" class="institution-logo">
+                            </div>
+                            <h5 class="card-title text-center">Universidad de Chile</h5>
+                            <p class="card-text text-muted text-center">Institución pública tradicional con más de 180 años de historia.</p>
+                            <div class="d-flex justify-content-between mb-2">
+                                <small><i class="fas fa-map-marker-alt me-1"></i> Santiago</small>
+                                <small><i class="fas fa-graduation-cap me-1"></i> 65 carreras</small>
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <small><i class="fas fa-star me-1"></i> 6 años acreditación</small>
+                                <small><i class="fas fa-users me-1"></i> 40,000 estudiantes</small>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <a href="#" class="btn btn-primary">Ver detalles</a>
+                                <a href="#" class="btn btn-outline-primary">Comparar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="card institution-card">
+                        <div class="card-body position-relative">
+                            <div class="accreditation-badge">Acreditada</div>
+                            <div class="text-center mb-3">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Pontificia_Universidad_Cat%C3%B3lica_de_Chile_%28logo%29.svg/320px-Pontificia_Universidad_Cat%C3%B3lica_de_Chile_%28logo%29.svg.png" alt="Pontificia Universidad Católica de Chile" class="institution-logo">
+                            </div>
+                            <h5 class="card-title text-center">P. Universidad Católica</h5>
+                            <p class="card-text text-muted text-center">Universidad privada con tradición académica y excelencia.</p>
+                            <div class="d-flex justify-content-between mb-2">
+                                <small><i class="fas fa-map-marker-alt me-1"></i> Santiago</small>
+                                <small><i class="fas fa-graduation-cap me-1"></i> 58 carreras</small>
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <small><i class="fas fa-star me-1"></i> 7 años acreditación</small>
+                                <small><i class="fas fa-users me-1"></i> 30,000 estudiantes</small>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <a href="#" class="btn btn-primary">Ver detalles</a>
+                                <a href="#" class="btn btn-outline-primary">Comparar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="card institution-card">
+                        <div class="card-body position-relative">
+                            <div class="accreditation-badge">Acreditada</div>
+                            <div class="text-center mb-3">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Usach_escudo2015.svg/320px-Usach_escudo2015.svg.png" alt="Universidad de Santiago" class="institution-logo">
+                            </div>
+                            <h5 class="card-title text-center">Universidad de Santiago</h5>
+                            <p class="card-text text-muted text-center">Universidad estatal con enfoque en ciencia y tecnología.</p>
+                            <div class="d-flex justify-content-between mb-2">
+                                <small><i class="fas fa-map-marker-alt me-1"></i> Santiago</small>
+                                <small><i class="fas fa-graduation-cap me-1"></i> 52 carreras</small>
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <small><i class="fas fa-star me-1"></i> 5 años acreditación</small>
+                                <small><i class="fas fa-users me-1"></i> 18,000 estudiantes</small>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <a href="#" class="btn btn-primary">Ver detalles</a>
+                                <a href="#" class="btn btn-outline-primary">Comparar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Comparación de Instituciones -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h4 class="section-title">Compara Instituciones</h4>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Institución</th>
+                                    <th>Tipo</th>
+                                    <th>Acreditación</th>
+                                    <th>Carreras</th>
+                                    <th>Arancel Promedio</th>
+                                    <th>Puntaje Corte</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Universidad de Chile</td>
+                                    <td>Universidad Tradicional</td>
+                                    <td>6 años</td>
+                                    <td>65</td>
+                                    <td>$3.800.000</td>
+                                    <td>650</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary">Ver</button>
+                                        <button class="btn btn-sm btn-outline-primary">Comparar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>P. Universidad Católica</td>
+                                    <td>Universidad Privada</td>
+                                    <td>7 años</td>
+                                    <td>58</td>
+                                    <td>$5.200.000</td>
+                                    <td>680</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary">Ver</button>
+                                        <button class="btn btn-sm btn-outline-primary">Comparar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Universidad de Santiago</td>
+                                    <td>Universidad Estatal</td>
+                                    <td>5 años</td>
+                                    <td>52</td>
+                                    <td>$3.500.000</td>
+                                    <td>620</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary">Ver</button>
+                                        <button class="btn btn-sm btn-outline-primary">Comparar</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-primary">Ver todas las instituciones</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Orientación Section -->
-    <section id="orientacion" class="module bg-light">
+    <section id="orientacion" class="module">
         <div class="container">
             <h2 class="section-title text-center">Orientación Personalizada</h2>
             <div class="row">
@@ -445,7 +699,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="module">
+    <section class="module bg-light">
         <div class="container">
             <h2 class="section-title text-center">Experiencias de Estudiantes</h2>
             <div class="row">
@@ -514,6 +768,7 @@
                         <li class="mb-2"><a href="#inicio" class="text-white text-decoration-none">Inicio</a></li>
                         <li class="mb-2"><a href="#test" class="text-white text-decoration-none">Test Vocacional</a></li>
                         <li class="mb-2"><a href="#carreras" class="text-white text-decoration-none">Carreras</a></li>
+                        <li class="mb-2"><a href="#instituciones" class="text-white text-decoration-none">Instituciones</a></li>
                         <li class="mb-2"><a href="#orientacion" class="text-white text-decoration-none">Orientación</a></li>
                     </ul>
                 </div>
@@ -537,7 +792,7 @@
             </div>
             <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
             <div class="text-center">
-                <p class="mb-0">&copy; 2025 Orientación Vocacional. Todos los derechos reservados.</p>
+                <p class="mb-0">&copy; 2023 Orientación Vocacional. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
@@ -672,6 +927,19 @@
                     }
                 });
             });
+            
+            // Filtros para instituciones
+            const tipoInstitucion = document.getElementById('tipo-institucion');
+            const regionInstitucion = document.getElementById('region-institucion');
+            
+            tipoInstitucion.addEventListener('change', filtrarInstituciones);
+            regionInstitucion.addEventListener('change', filtrarInstituciones);
+            
+            function filtrarInstituciones() {
+                // En una implementación real, aquí se filtrarían las instituciones
+                // según los criterios seleccionados
+                console.log('Filtrando instituciones...');
+            }
         });
     </script>
 </body>
